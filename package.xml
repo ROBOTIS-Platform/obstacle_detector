@@ -1,21 +1,31 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>obstacle_detector</name>
   <version>1.0.0</version>
   <description>Detect obstacles in form of line segments and circles from 2D laser scans.</description>
   <maintainer email="mateusz.przybyla@put.poznan.pl">Mateusz Przybyla</maintainer>
   <author>Mateusz Przybyla</author>
+
+  <author email="thlim@robotis.com">Darby Lim</author>
+  <maintainer email="pyo@robotis.com">Pyo</maintainer>
+
   <license>BSD</license>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>message_generation</build_depend>
-  <exec_depend>message_runtime</exec_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>tf</depend>
-  <depend>rviz</depend>
-  <depend>roscpp</depend>
-  <depend>roslaunch</depend>
-  <depend>nodelet</depend>
+  <!-- <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend> -->
+
+  <depend>rclcpp</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <!-- <depend>tf</depend> -->
+  <!-- <depend>rviz</depend> -->
+  <!-- <depend>roscpp</depend> -->
+  <!-- <depend>roslaunch</depend> -->
+  <!-- <depend>nodelet</depend> -->
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
   <depend>sensor_msgs</depend>
@@ -23,7 +33,11 @@
   <depend>laser_geometry</depend>
 
   <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+  <!-- <export>
     <rviz plugin="${prefix}/rviz_plugins.xml"/>
     <nodelet plugin="${prefix}/nodelet_plugins.xml" />
-  </export>
+  </export> -->
 </package>
